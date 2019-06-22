@@ -17,13 +17,25 @@
           <div class="box min-box"></div>
           <div class="box second-box"></div>        
         </div>
+      <div class="dot-hand dot-1"><div class="dot"></div></div>
+      <div class="dot-hand dot-2"><div class="dot"></div></div>
+      <div class="dot-hand dot-3"><div class="dot"></div></div>
+      <div class="dot-hand dot-4"><div class="dot"></div></div>
+      <div class="dot-hand dot-5"><div class="dot"></div></div>
+      <div class="dot-hand dot-6"><div class="dot"></div></div>
+      <div class="dot-hand dot-7"><div class="dot"></div></div>
+      <div class="dot-hand dot-8"><div class="dot"></div></div>
+      <div class="dot-hand dot-9"><div class="dot"></div></div>
+      <div class="dot-hand dot-10"><div class="dot"></div></div>
+      <div class="dot-hand dot-11"><div class="dot"></div></div>
+      <div class="dot-hand dot-12"><div class="dot"></div></div>
       </div>
     </div>
 
 
   <style>
     html {
-      background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=5);
+      background: #018DED url(http://unsplash.it/1500/1000?image=880&blur=5);
       background-size: cover;
       font-family: 'helvetica neue';
       text-align: center;
@@ -93,7 +105,7 @@
       width: 50%;
       position: absolute;
       top: calc(50% - 20px);
-      left: 53%;
+      left: 51%;
       display: flex;
       align-content: center;
       justify-content: space-between;
@@ -117,6 +129,34 @@
     .second-box { color: red; }
     .min-box    { color: blue; }
 
+    .dot-hand {
+      width: 54.5%;
+      height: 8px;
+      background: transparent;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform-origin: 100%;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #000;
+    }
+
+    .dot-1 { transform: rotate(120deg); }
+    .dot-2 { transform: rotate(150deg); }
+    .dot-3 { transform: rotate(180deg); }
+    .dot-4 { transform: rotate(210deg); }
+    .dot-5 { transform: rotate(240deg); }
+    .dot-6 { transform: rotate(270deg); }
+    .dot-7 { transform: rotate(300deg); }
+    .dot-8 { transform: rotate(330deg); }
+    .dot-9 { transform: rotate(360deg); }
+    .dot-10 { transform: rotate(390deg); }
+    .dot-11 { transform: rotate(420deg); }
+    .dot-12 { transform: rotate(90deg); }
   </style>
     
   <script>
