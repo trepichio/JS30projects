@@ -17,6 +17,10 @@
           <div class="box min-box"></div>
           <div class="box second-box"></div>        
         </div>
+        <div class="date-container">
+          <div class="day-box"></div>
+          <div class="month-box"></div>
+        </div>
         <div class="dot-hand dot-1"><div class="dot"></div></div>
         <div class="dot-hand dot-2"><div class="dot"></div></div>
         <div class="dot-hand dot-3"><div class="dot"></div></div>
@@ -71,6 +75,7 @@
       width: 100%;
       height: 100%;
       transform: translateY(-3px); /* account for the height of the clock hands */
+      font-family: monospace;
     }
 
     .hand {
@@ -119,7 +124,6 @@
       font-weight: bold;
       font-size: 7.5rem;
       line-height: 1.4;
-      font-family: monospace;
       z-index: -1;
       /* background: #fff; */
       text-align: center;
@@ -163,6 +167,43 @@
     .dot-10 { transform: rotate(390deg); }
     .dot-11 { transform: rotate(420deg); }
     .dot-12 { transform: rotate(90deg);  }
+
+    .date-container {
+      display: flex;
+      justify-content: center;
+      -ms-align-items: center;
+      align-items: center;
+      width: 100%;
+      color: #000;
+      text-align: center;
+      position: absolute;
+      top: calc(50% + 5rem);
+      z-index: -4;
+    }
+
+    .day-box, .month-box {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      font-weight: bold;
+      padding: 0.7rem;
+    }
+
+    .day-box {
+      line-height: 1.5;
+      font-size: 3rem;
+      background: #fff;
+      border: 2px solid black;
+      box-shadow: inset 2px 2px 2px rgba(0,0,0,.3);
+
+    }
+
+    .month-box {
+      font-size: 2rem;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+      line-height: 2;
+    }
+
   </style>
     
   <script>
@@ -176,6 +217,8 @@
     const secondBox  =  document.querySelector('.second-box');
     const minBox     =  document.querySelector('.min-box');
     const hourBox    =  document.querySelector('.hour-box');
+    const dayBox     =  document.querySelector('.day-box');
+    const monthBox   =  document.querySelector('.month-box');
 
     function setDate () {
       // Set time and degrees
@@ -186,6 +229,9 @@
       const secondsDegrees = ((seconds / 60) * 360) + 90;
       const minutesDegrees = ((minutes / 60) * 360) + 90;
       const hoursDegrees   = ((hours / 12) * 360) + 90; 
+
+      const day = now.getDay();
+      const month = now.toLocaleString('en-us', { month: 'short' });;
 
       // this fix a visual glitch when hands reset 
       if (secondsDegrees === 90) {
@@ -203,6 +249,8 @@
       secondBox.textContent = `${seconds}`.padStart(2,'0');
       minBox.textContent    = `${minutes}`.padStart(2,'0');
       hourBox.textContent   = `${hours}`.padStart(2,'0');
+      dayBox.textContent    = `${day}`.padStart(2,'0');
+      monthBox.textContent  = `${month}`;
     }
     setInterval(setDate, 1000);
   </script>
