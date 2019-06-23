@@ -102,31 +102,37 @@
     }
 
     .box-container {
-      width: 50%;
+      width: 90%;
       position: absolute;
-      top: calc(50% - 20px);
-      left: 51%;
+      top: calc(50% - 10rem / 2);
+      left: calc(50% - 11.6rem);
       display: flex;
-      align-content: center;
+      align-items: center;
       justify-content: space-between;
     }
 
     .box {
-      width: 40px;
-      height: 40px;
-      border: 2px solid black;
+      width: auto;
+      height: auto;
+      /* border: 2px solid black; */
       color: #000;
       font-weight: bold;
-      font-size: 3rem;
+      font-size: 7.5rem;
       line-height: 1.4;
       font-family: monospace;
       z-index: -1;
-      background: #fff;
+      /* background: #fff; */
       text-align: center;
-      box-shadow: inset 2px 2px 2px rgba(0,0,0,.3);
+      /* box-shadow: inset 2px 2px 2px rgba(0,0,0,.3); */
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
     }
 
-    .second-box { color: red; }
+    .second-box { 
+      color: red;
+      width: 4rem;
+      height: 4rem;
+      font-size: 3rem;
+    }
     .min-box    { color: blue; }
 
     .dot-hand {
@@ -194,9 +200,9 @@
       hourHand.style.transform   = (`rotate(${hoursDegrees}deg)`);
 
       // show time on clock boxes
-      secondBox.textContent = `${seconds}`;
-      minBox.textContent    = `${minutes}`;
-      hourBox.textContent   = `${hours}`;
+      secondBox.textContent = `${seconds}`.padStart(2,'0');
+      minBox.textContent    = `${minutes}`.padStart(2,'0');
+      hourBox.textContent   = `${hours}`.padStart(2,'0');
     }
     setInterval(setDate, 1000);
   </script>
