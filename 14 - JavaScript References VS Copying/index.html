@@ -102,7 +102,7 @@
     const dev2 = JSON.parse(JSON.stringify(john));
 
     // deep clone object this way too but must be careful declaring 
-    // spread operator for deeper levels
+    // spread operators for each deeper levels
     const dev3 = {...john, social: {...john.social, linkedin: '@cool'}};
     console.log(dev3)
   </script>
