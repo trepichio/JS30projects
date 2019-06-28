@@ -23,12 +23,17 @@
       <input type="text" name="item" placeholder="Item Name" required>
       <input type="submit" value="+ Add Item">
     </form>
+    <div class="check_all">
+      <input type="checkbox" id="checkbox_all">
+      <label for="checkbox_all">Check ALL</label>
+    </div>
   </div>
 
 <script>
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
   const items = JSON.parse(localStorage.getItem('items')) || [];
+  const markAll = document.querySelector('#checkbox_all');
 
   function addItem (e) {
     e.preventDefault();
@@ -61,16 +66,28 @@
     items[index].done = !items[index].done;
     localStorage.setItem('items', JSON.stringify(items));
     populateList(items, itemsList);
+    toggleCheckText();
 
   }
 
-  ///////////////////////////////////////////////
-  // TODO: a button that check and uncheck all //
-  ///////////////////////////////////////////////
-  
+  function toggleCheckText () {
+    markAll.checked = !items.find(item => item.done === false);
+
+    const toggleText = markAll.checked ? 'UNCHECK' : 'CHECK';
+    markAll.labels[0].textContent = `${toggleText} ALL`;
+  }
+
+  markAll.addEventListener('change', e => {
+    items.forEach(item => item.done = e.target.checked);
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
+    toggleCheckText();
+  });
+
   addItems.addEventListener('submit', addItem);
   itemsList.addEventListener('click', toggleDone);
   populateList(items, itemsList);
+  toggleCheckText();
 </script>
 
 

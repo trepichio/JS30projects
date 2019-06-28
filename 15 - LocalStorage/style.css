@@ -77,3 +77,24 @@ h2 {
   outline: 0;
   border: 1px solid rgba(0,0,0,0.1);
 }
+
+.check_all {
+  width: 104px;
+  margin-top: 10px;
+  padding: 4px;
+  font-size: 0.7rem;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  box-shadow: 1px 2px 1px rgba(0,0,0,.5);
+  text-transform: uppercase;
+}
+
+.check_all input {
+  vertical-align: middle;
+  display: none;
+}
+
+
+.check_all:hover {
+  background: #C4E7E8;
+}
