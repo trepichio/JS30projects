@@ -47,6 +47,7 @@
     populateList(items, itemsList);
     localStorage.setItem('items', JSON.stringify(items));
     this.reset();
+    toggleCheckText();
   }
 
   function populateList (plates = [], platesList) {
