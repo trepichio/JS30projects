@@ -13,7 +13,7 @@ buttons.forEach(button => {
 
 customForm.addEventListener('submit',(e) => {
 	e.preventDefault();
-	const seconds = e.target.minutes.value * 60;
+	const seconds = Math.round(e.target.minutes.value * 60);
 	setTimer(seconds);
 	e.target.reset();
 });
