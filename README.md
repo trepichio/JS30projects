@@ -16,7 +16,7 @@ If you are interested on doing the same, [check his website out](https://javascr
 
 
 
-## Let's cut the cheese right way!
+## Let's cut to the chase right way!
 
 Following below I present a short description for each project and link each one with my own solutions.
 I may have done a little bit more work than asked on a few of them.
